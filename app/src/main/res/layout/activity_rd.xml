@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/back"
+                app:tint="@color/black" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/black"
+                android:text="SIP Calculator"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout"
+        android:layout_above="@+id/al_banner"
+        android:layout_margin="3dp"
+        android:layout_marginTop="3dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_main">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Regular Monthly Deposit*"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/yearly_investment_amount_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_color"
+                            android:hint="10,000"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:inputType="numberDecimal"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Rate Of Interest*"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/interest_rate_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_color"
+                            android:hint="5.6"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:inputType="numberDecimal"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Tenure*"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/months_edit_text"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="8dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_color"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:hint="Months"
+                                android:inputType="number"
+                                android:padding="10dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/grey"
+                                android:textSize="15sp" />
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/freq_spin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/header_background_primary_dark"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:gravity="center"
+                                android:hint="Select"
+                                android:padding="10dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black"
+                                android:textSize="14.5sp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_tint="@color/black"
+                                app:spinner_arrow_padding="8dp"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_item_array="@array/rd_com_frq_array"
+                                app:spinner_popup_animation="bounce"
+                                app:spinner_popup_background="@color/white"
+                                app:spinner_popup_elevation="10dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/RR1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/C1"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:id="@+id/reset_text_view"
+                            android:layout_width="150dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/btn_btnreset" />
+
+
+
+
+
+
+
+                        <ImageView
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:id="@+id/calculate_text_view"
+                            android:layout_width="150dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/btn_calculator" />
+
+
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_main">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="vertical"
+                        android:padding="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Investment Amount"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/investment_amount_result_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="center"
+                                android:textColor="@color/blue"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Total Interest"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/total_interest_amount_result_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="center"
+                                android:textColor="@color/blue"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="RD Maturity Amount"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/maturity_amount_result_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="center"
+                                android:textColor="@color/blue"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

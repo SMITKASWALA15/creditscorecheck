@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".GstActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/back"
+                app:tint="@color/black" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Gst Calculator"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/al_banner"
+        android:layout_below="@id/relativeLayout"
+        android:layout_margin="3dp"
+        android:layout_marginTop="3dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/native_banner_ad_container">
+
+                <RelativeLayout
+                    android:id="@+id/C1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_main">
+
+                    <RelativeLayout
+                        android:id="@+id/R1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_Principle_Amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Amount*"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/amount_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_below="@+id/txt_Principle_Amount"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/edit_text_color"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:hint="10,000"
+                            android:inputType="numberDecimal"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_gst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/R1"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="GST Rate*"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/txt_gst"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginBottom="5dp">
+
+                        <Spinner
+                            android:id="@+id/spRate"
+                            style="@style/DropDown_PowerSpinner"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/header_background_primary_dark"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:textSize="14.5sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RR1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/C1"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:id="@+id/reset_text_view"
+                            android:layout_width="150dp"
+                            android:layout_height="80dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/btn_btnreset" />
+
+
+
+                        <ImageView
+                            android:id="@+id/calculate_text_view"
+                            android:layout_width="150dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/btn_calculator" />
+
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/RR1"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_main"
+                    android:padding="8dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/L1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="CGST"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:id="@+id/cgst"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_margin="8dp"
+                                    android:background="@drawable/edit_text_background"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:text=""
+                                    android:textColor="@color/blue"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="SGST"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:id="@+id/sgst"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_margin="8dp"
+                                    android:background="@drawable/edit_text_background"
+                                    android:fontFamily="@font/montserrat_semibold"
+                                    android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:text=""
+                                    android:textColor="@color/blue"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/L2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/L1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="GST Price"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/gst_price_result_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="center"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/L3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/L2"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Amount"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/net_price_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="center"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/L3"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Total Price"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/net_price_result_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="center"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

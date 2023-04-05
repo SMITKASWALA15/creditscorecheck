@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="rd_com_frq_array">
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Half-Yearly</item>
+        <item>Yearly</item>
+    </array>
+</resources>

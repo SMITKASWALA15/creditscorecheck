@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/light_blue"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:tag="layout/activity_home_0">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="CREDIT SCORE"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="R e p o r t   C h e c k"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout">
+
+        <RelativeLayout
+            android:id="@+id/R1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <RelativeLayout
+                android:layout_marginBottom="10dp"
+                android:id="@+id/image_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <ImageView
+                    android:src="@drawable/home_bankvector"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"/>
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/native_container"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="300dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="2dp" />-->
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/L1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_main">
+
+                <ImageView
+                    android:id="@+id/banklist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/bank_balance" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/check_credit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/L1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/checkonlion"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/check_credit_online" />
+
+                    <ImageView
+                        android:id="@+id/checkofflion"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/check_credit_offline" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/check_credit"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/calculator"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/finance_calculator" />
+
+                    <ImageView
+                        android:id="@+id/maintips"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/finance_tips" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
